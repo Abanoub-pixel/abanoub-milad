@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/abanoub-milad/static/css/main.7059c2d7.chunk.css",
+    "main.js": "/abanoub-milad/static/js/main.08f5b30a.chunk.js",
+    "main.js.map": "/abanoub-milad/static/js/main.08f5b30a.chunk.js.map",
+    "runtime-main.js": "/abanoub-milad/static/js/runtime-main.daec7a6e.js",
+    "runtime-main.js.map": "/abanoub-milad/static/js/runtime-main.daec7a6e.js.map",
+    "static/js/2.0553cfd9.chunk.js": "/abanoub-milad/static/js/2.0553cfd9.chunk.js",
+    "static/js/2.0553cfd9.chunk.js.map": "/abanoub-milad/static/js/2.0553cfd9.chunk.js.map",
+    "static/js/3.fbc1d7f7.chunk.js": "/abanoub-milad/static/js/3.fbc1d7f7.chunk.js",
+    "static/js/3.fbc1d7f7.chunk.js.map": "/abanoub-milad/static/js/3.fbc1d7f7.chunk.js.map",
+    "index.html": "/abanoub-milad/index.html",
+    "precache-manifest.8f80da0cefb3c1027d4c090329754776.js": "/abanoub-milad/precache-manifest.8f80da0cefb3c1027d4c090329754776.js",
+    "service-worker.js": "/abanoub-milad/service-worker.js",
+    "static/css/main.7059c2d7.chunk.css.map": "/abanoub-milad/static/css/main.7059c2d7.chunk.css.map",
+    "static/js/2.0553cfd9.chunk.js.LICENSE.txt": "/abanoub-milad/static/js/2.0553cfd9.chunk.js.LICENSE.txt",
+    "static/media/bars-solid.svg": "/abanoub-milad/static/media/bars-solid.3186ed92.svg",
+    "static/media/xmark-solid.svg": "/abanoub-milad/static/media/xmark-solid.682015d2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.daec7a6e.js",
+    "static/js/2.0553cfd9.chunk.js",
+    "static/css/main.7059c2d7.chunk.css",
+    "static/js/main.08f5b30a.chunk.js"
+  ]
+}
