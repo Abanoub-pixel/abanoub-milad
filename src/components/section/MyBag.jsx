@@ -30,9 +30,9 @@ class MyBag extends Component {
                     <div className="left-cart">
                       <h2 className="item-title">{item.name}</h2>
                       <span className="item-price">
-                        {`${price.currency.symbol} ${
+                        {`${price.currency.symbol} ${(
                           (item.count || 1) * price.amount
-                        }`}
+                        ).toFixed(2)}`}
                         .00
                       </span>
                       <div className="sizes">
@@ -85,7 +85,9 @@ class MyBag extends Component {
             <div>
               <div className="total">
                 <p className="tot">Total</p>
-                <p className="price">{`${total} ${currency || "$"}`}</p>
+                <p className="price">{`${total.toFixed(2)} ${
+                  currency || "$"
+                }`}</p>
               </div>
               <div className="btn">
                 <button>VIEW BAG</button>

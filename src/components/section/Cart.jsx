@@ -28,9 +28,9 @@ class Cart extends Component {
                 <div className="left-cart">
                   <h2 className="item-title">{item.name}</h2>
                   <span>
-                    {`${price.currency.symbol} ${
+                    {`${price.currency.symbol} ${(
                       (item.count || 1) * price.amount
-                    }`}
+                    ).toFixed(2)}`}
                     .00
                   </span>
                   <Sizes
