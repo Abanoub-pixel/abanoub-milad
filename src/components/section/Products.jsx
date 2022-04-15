@@ -69,11 +69,12 @@ products {
                 <div className="card" key={product.id}>
                   {!product.inStock && (
                     <div
+                      className="out-of-stock"
                       style={{
                         height: "100%",
                         width: "100%",
                         zIndex: "1000",
-                        backgroundColor: "#1f171757",
+                        backgroundColor: "rgb(31 23 23 / 17%)",
                         position: "absolute",
                         display: "inline",
                       }}
@@ -94,7 +95,7 @@ products {
                         gap: "8px",
                         position: "absolute",
                         right: "54px",
-                        bottom: "32px",
+                        bottom: "18px",
                       }}
                     >
                       {colors.map((c) => (

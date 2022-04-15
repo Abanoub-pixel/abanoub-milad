@@ -45,7 +45,7 @@ class Details extends Component {
     const sizes = (product.attributes || []).find(
       (attr) => attr.id === "Size"
     )?.items;
-    const { currency, cart } = this.context;
+    const { currency } = this.context;
     const price =
       product.prices?.find(({ currency: { label } }) => label === currency) ||
       product.prices?.[0];

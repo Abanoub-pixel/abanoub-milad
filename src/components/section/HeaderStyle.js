@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 export const HeaderStyle = styled.div`
-header {
-   
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,7 +9,7 @@ header {
     padding-bottom: 45px;
     padding-left: 50px;
   }
-  
+
   header nav {
     display: flex;
     padding-top: 40px;
@@ -29,15 +28,14 @@ header {
     position: relative;
   }
   nav ul li a::after {
-      content: '';
-      position: absolute;
-      background-color: #5ECE7B;
-      height: 3px;
-      width: 0;
-      left: 0px;
-      margin-top: 50px;
-      transition: 0.5s linear;
-  
+    content: "";
+    position: absolute;
+    background-color: #5ece7b;
+    height: 3px;
+    width: 0;
+    left: 0px;
+    margin-top: 50px;
+    transition: 0.5s linear;
   }
   nav ul li a:hover::after {
     width: 100%;
@@ -58,7 +56,7 @@ header {
     margin-left: 25px;
     margin-bottom: 3px;
   }
-  
+
   .nav-cart span {
     position: absolute;
     right: 7px;
@@ -73,7 +71,7 @@ header {
     border-radius: 50%;
     z-index: 0;
   }
-  
+
   header .menu,
   header .close {
     cursor: pointer;
@@ -95,13 +93,13 @@ header {
       opacity: 0.97;
       transition: 0.5s linear;
     }
-  
+
     header .menu,
     header .close {
       display: block;
     }
   }
-  
+
   header .close {
     position: absolute;
     top: 10px;
@@ -110,4 +108,4 @@ header {
   header ul.toggle {
     top: 0;
   }
-`
+`;

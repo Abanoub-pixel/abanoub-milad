@@ -6,6 +6,7 @@ export const ProductsStyle = styled.div`
     font-size: 42px;
     line-height: 160%;
     color: #1d1f22;
+    padding-left: 60px;
   }
   .product {
     width: 101%;
@@ -20,6 +21,7 @@ export const ProductsStyle = styled.div`
     box-shadow: none;
     transition: 0.5s linear;
     transform: scale(1);
+    padding-top: 15px;
   }
   .card:hover {
     box-shadow: 2px 8px 20px #ddd;
@@ -43,6 +45,16 @@ export const ProductsStyle = styled.div`
   }
   .card .sold {
     opacity: 0.3;
+  }
+  .out-of-stock {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 160%;
+    color: #8d8f9a;
+    padding-top: 140px;
+    padding-left: 90px;
   }
 
   .card h3 {
