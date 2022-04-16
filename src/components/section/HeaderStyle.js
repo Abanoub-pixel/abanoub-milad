@@ -56,6 +56,12 @@ export const HeaderStyle = styled.div`
     margin-left: 25px;
     margin-bottom: 3px;
   }
+  .shop-car {
+    display: flex;
+  }
+  .bag {
+    padding-top: 6px;
+  }
 
   .nav-cart span {
     position: absolute;

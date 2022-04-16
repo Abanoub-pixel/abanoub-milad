@@ -67,10 +67,6 @@ products {
               const colors =
                 product.attributes.find((a) => a.type === "swatch")?.items ||
                 [];
-              // const oneColor = (product.attributes || []).find(
-              //   (attr) => attr.type === "swatch"
-              // )?.items;
-              // console.log(oneColor);
               return (
                 <div className="card" key={product.id}>
                   {!product.inStock && (
