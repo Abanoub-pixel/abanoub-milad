@@ -4,6 +4,7 @@ import { DataContext } from "../Context";
 import { ProductsStyle } from "./ProductsStyle";
 import { withApollo } from "@apollo/client/react/hoc";
 import { gql } from "@apollo/client";
+import Colors from "./Colors";
 export class Products extends Component {
   static contextType = DataContext;
 
@@ -65,6 +66,10 @@ products {
               const colors =
                 product.attributes.find((a) => a.type === "swatch")?.items ||
                 [];
+              // const oneColor = (product.attributes || []).find(
+              //   (attr) => attr.type === "swatch"
+              // )?.items;
+              // console.log(oneColor);
               return (
                 <div className="card" key={product.id}>
                   {!product.inStock && (
@@ -98,16 +103,7 @@ products {
                         bottom: "18px",
                       }}
                     >
-                      {colors.map((c) => (
-                        <div
-                          style={{
-                            width: "15px",
-                            height: "15px",
-                            backgroundColor: c.value,
-                            border: "1px black solid",
-                          }}
-                        ></div>
-                      ))}
+                      <Colors colors={colors} />
                     </div>
                     {product.inStock && (
                       <Link className="carty" to={`/product/${product.id}`}>

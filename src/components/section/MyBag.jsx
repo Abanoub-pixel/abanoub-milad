@@ -19,7 +19,6 @@ class MyBag extends Component {
               const selectedSize = sizes.find(
                 (i) => i.value === item.size
               )?.value;
-              console.log(selectedSize, "selectedSize");
               const price =
                 item.prices?.find(
                   ({ currency: { label } }) => label === currency
