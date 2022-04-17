@@ -11,6 +11,9 @@ class Colors extends Component {
             style={{
               width: "15px",
               height: "15px",
+              borderRadius: "50%",
+              outline: "1px black solid",
+              outlineOffset: "1px",
               backgroundColor: c.value,
               border: "1px black solid",
             }}

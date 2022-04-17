@@ -13,12 +13,6 @@ class MyBag extends Component {
           <div className="add-to-cart">
             <p className="items">my bag, {cart.length} items</p>
             {(cart || []).map((item) => {
-              const sizes = item.attributes?.find(
-                ({ id }) => id === "Size"
-              )?.items;
-              const selectedSize = sizes?.find(
-                (i) => i.value === item.size
-              )?.value;
               const price =
                 item.prices?.find(
                   ({ currency: { label } }) => label === currency
@@ -34,29 +28,42 @@ class MyBag extends Component {
                         ).toFixed(2)}`}
                         .00
                       </span>
-                      <div className="sizes">
-                        {(item.sizes || []).map((size, index) => (
-                          <button key={index}>{size}</button>
-                        ))}
-                      </div>
-                      {sizes && (
-                        <div
-                          style={{
-                            width: "35px",
-                            height: "35px",
-                            border: "1px solid gray",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                          }}
-                        >
-                          <span
-                            style={{ fontSize: "medium", fontWeight: "500" }}
+                      <div>
+                        {item.size && (
+                          <div
+                            style={{
+                              width: "35px",
+                              height: "35px",
+                              border: "1px solid gray",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                            }}
                           >
-                            {selectedSize}
-                          </span>
-                        </div>
-                      )}
+                            <span
+                              style={{
+                                fontSize: "medium",
+                                fontWeight: "500",
+                              }}
+                            >
+                              {item.size}
+                            </span>
+                          </div>
+                        )}
+                        {item.color && (
+                          <div
+                            style={{
+                              width: "30px",
+                              height: "30px",
+                              border: "1px solid black",
+                              borderRadius: "50%",
+                              outline: "1px solid black",
+                              outlineOffset: "2px",
+                              backgroundColor: item.color,
+                            }}
+                          />
+                        )}
+                      </div>
                     </div>
                     <div className="right-cart">
                       <div className="btn">

@@ -13,6 +13,7 @@ export class DataProvider extends Component {
 
   componentDidUpdate(prevProps, PrevState) {
     if (PrevState.cart !== this.state.cart) this.getTotal();
+    console.log(this.state.cart);
   }
 
   decrement = (id) => {
@@ -48,11 +49,13 @@ export class DataProvider extends Component {
     this.setState({ total: res });
   };
 
-  addCart = (product, size) => {
+  addCart = (product, size, color) => {
     const { cart } = this.state;
     const id = Date.now();
 
-    this.setState({ cart: [...cart, { ...product, size, count: 1, id }] });
+    this.setState({
+      cart: [...cart, { ...product, size, color, count: 1, id }],
+    });
   };
 
   setCurrency = (currency) => {

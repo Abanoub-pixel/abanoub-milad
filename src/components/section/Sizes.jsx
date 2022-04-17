@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import { DataContext } from "../Context";
 
 const selectedSizeStyle = {
   color: "white",
   backgroundColor: "black",
 };
 class Sizes extends Component {
-  static contextType = DataContext;
-
   render() {
     const {
       sizes,

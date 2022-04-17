@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { DataContext } from "../Context";
 import { Link } from "react-router-dom";
 import Sizes from "./Sizes";
+import ColorSelector from "./ColorSelector";
 import { DetailsStyle } from "./DetailsStyle";
 import { withApollo } from "@apollo/client/react/hoc";
 import { gql } from "@apollo/client";
@@ -11,7 +12,8 @@ class Details extends Component {
   state = {
     product: {},
     loading: true,
-    selectedSize: "S",
+    selectedSize: undefined,
+    selectedColor: undefined,
   };
   componentWillMount() {
     const query = gql`
@@ -41,9 +43,12 @@ class Details extends Component {
   }
 
   render() {
-    const { product } = this.state;
+    const { product, selectedSize, selectedColor } = this.state;
     const sizes = (product.attributes || []).find(
       (attr) => attr.id === "Size"
+    )?.items;
+    const colors = (product.attributes || []).find(
+      (attr) => attr.id === "Color"
     )?.items;
     const { currency } = this.context;
     const price =
@@ -76,6 +81,13 @@ class Details extends Component {
                   }
                   selectedSize={this.state.selectedSize}
                 />
+                <ColorSelector
+                  colors={colors}
+                  onSelectColor={(selectedColor) =>
+                    this.setState({ selectedColor })
+                  }
+                  selectedColor={this.state.selectedColor}
+                />
                 <h3 className="price">PRICE:</h3>
                 <span>{`${price.currency.symbol} ${price.amount}`}.00</span>
                 <br />
@@ -85,9 +97,15 @@ class Details extends Component {
                   className="cart"
                 >
                   <button
-                    className="cart"
+                    disabled={
+                      (sizes && !selectedSize) || (colors && !selectedColor)
+                    }
                     onClick={() => {
-                      this.context.addCart(product, this.state.selectedSize);
+                      this.context.addCart(
+                        product,
+                        selectedSize,
+                        selectedColor
+                      );
                     }}
                   >
                     ADD TO CART

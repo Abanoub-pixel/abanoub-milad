@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import { DataContext } from "../Context";
 import { CartStyle } from "./CartStyle";
 import Sizes from "./Sizes";
+import ColorSelector from "./ColorSelector";
 
 class Cart extends Component {
   static contextType = DataContext;
-  state = {
-    selectedSize: "S",
-  };
 
   render() {
     const { cart, decrement, increment, currency } = this.context;
@@ -20,8 +18,13 @@ class Cart extends Component {
               item.prices?.find(
                 ({ currency: { label } }) => label === currency
               ) || item.prices?.[0];
+
             const sizes = (item.attributes || []).find(
               (attr) => attr.id === "Size"
+            )?.items;
+
+            const colors = (item.attributes || []).find(
+              (attr) => attr.id === "Color"
             )?.items;
             return (
               <div className="details" key={item.name}>
@@ -33,14 +36,20 @@ class Cart extends Component {
                     ).toFixed(2)}`}
                     .00
                   </span>
-                  <Sizes
-                    sizes={sizes}
-                    onSelectSize={(selectedSize) =>
-                      this.setState({ selectedSize })
-                    }
-                    selectedSize={item.size || "S"}
-                    disableSelection
-                  />
+                  {sizes && (
+                    <Sizes
+                      sizes={sizes}
+                      selectedSize={item.size}
+                      disableSelection
+                    />
+                  )}
+                  {colors && (
+                    <ColorSelector
+                      colors={colors}
+                      selectedColor={item.color}
+                      disableSelection
+                    />
+                  )}
                 </div>
                 <div className="right-cart">
                   <div className="btn">

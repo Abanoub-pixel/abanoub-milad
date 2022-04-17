@@ -99,6 +99,11 @@ export const DetailsStyle = styled.div`
     cursor: pointer;
   }
 
+  .box .cart button:disabled {
+    background: #d3d3d3;
+    color: #000000;
+  }
+
   @media (max-width: 650px) {
     .box {
       padding-right: 95px;
